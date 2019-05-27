@@ -1,0 +1,9 @@
+{% set dovecot = salt['pillar.get']('dovecot', {
+    'lookup': salt['grains.filter_by']({
+        'default': {
+            'pkg': [],
+            'service': 'dovecot',
+            'cfg': ''
+        }
+    }),
+}, merge=True) %}
